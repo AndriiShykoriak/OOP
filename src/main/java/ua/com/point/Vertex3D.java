@@ -1,8 +1,5 @@
 package ua.com.point;
 
-import lombok.ToString;
-
-
 public class Vertex3D extends Vertex2D{
     private double z;
     public Vertex3D(double x, double y, double z) {
