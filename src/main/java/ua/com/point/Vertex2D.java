@@ -1,6 +1,5 @@
 package ua.com.point;
 
-import lombok.ToString;
 public class Vertex2D {
     private double x;
     private double y;
