@@ -2,7 +2,6 @@ package ua.com.planeShapeImpl;
 
 import lombok.Getter;
 import lombok.Setter;
-import org.w3c.dom.ls.LSOutput;
 import ua.com.figure.PlaneShape;
 import ua.com.point.Vertex2D;
 

@@ -5,7 +5,6 @@ import ua.com.point.Vertex2D;
 
 import java.util.List;
 
-
 public class Circle extends PlaneShape {
     private double radius;
 
@@ -24,7 +23,7 @@ public class Circle extends PlaneShape {
 
     @Override
     public String toString() {
-        return super.toString()+"{" +
+        return super.toString() + "{" +
                 "radius=" + radius +
                 "} ";
     }

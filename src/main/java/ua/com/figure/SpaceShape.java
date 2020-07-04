@@ -1,13 +1,11 @@
 package ua.com.figure;
 
 import ua.com.basicInterfaces.VolumeAreaMeasurable;
-import ua.com.point.Vertex2D;
 import ua.com.point.Vertex3D;
 
 import java.util.List;
 
 public abstract class SpaceShape extends Shape implements VolumeAreaMeasurable {
-
 
     public SpaceShape(List<Vertex3D> vertex3DList, String name) {
         super(vertex3DList, name);

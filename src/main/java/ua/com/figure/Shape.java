@@ -2,9 +2,6 @@ package ua.com.figure;
 
 import lombok.Getter;
 import lombok.Setter;
-import lombok.ToString;
-import ua.com.point.Vertex2D;
-import ua.com.point.Vertex3D;
 
 import java.util.List;
 
