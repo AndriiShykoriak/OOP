@@ -1,20 +1,19 @@
 package ua.com.figure;
 
-import ua.com.basicInterfaces.AreaPerimeterMeasurable;
+import ua.com.basicInterfaces.PerimeterAreaMeasurable;
 import ua.com.point.Vertex2D;
 
-public abstract class PlaneShape extends Shape implements AreaPerimeterMeasurable {
+import java.util.List;
 
-    Vertex2D vertex2D;
+public abstract class PlaneShape extends Shape implements PerimeterAreaMeasurable {
 
-    public PlaneShape(Vertex2D vertex2D, String name) {
-        super(name);
-        this.vertex2D = vertex2D;
+
+    public PlaneShape(List<Vertex2D> vertex2DList, String name) {
+        super(vertex2DList, name);
     }
 
     @Override
     public String toString() {
-        String out = "Shape type: " + "\"" + getName() + "\"  " + "Perimeter: " + String.format("%.1f", getPerimeter()) + "\tArea: " + String.format("%.1f", getArea());
-        return out;
+       return super.toString() + "Shape type: " + "\"" + getName() + "\"  " + "Perimeter: " + String.format("%.1f", getPerimeter()) + "\tArea: " + String.format("%.1f", getArea() );
     }
 }

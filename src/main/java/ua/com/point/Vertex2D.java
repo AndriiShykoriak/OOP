@@ -1,6 +1,6 @@
 package ua.com.point;
 
-public class Vertex2D {
+public class Vertex2D  {
     private double x;
     private double y;
 
@@ -17,13 +17,15 @@ public class Vertex2D {
         return y;
     }
 
-    public double getDistance(Vertex2D a, Vertex2D b) {
-        return Math.sqrt((Math.pow((a.getX() - b.getX()), 2) + Math.pow((a.getY() - b.getY()), 2)));
-    }
-
     @Override
     public String toString() {
         return "x=" + x +
-                ", y=" + y;
+                ", y=" + y ;
+    }
+
+
+    public double getDistance(Vertex2D vertex2D) {
+        return Math.sqrt(Math.pow((this.x - (vertex2D).getX()), 2)
+                + Math.pow((this.y - (vertex2D).getY()), 2));
     }
 }

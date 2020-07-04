@@ -3,13 +3,14 @@ package ua.com.spaceShapeImpl;
 import ua.com.figure.SpaceShape;
 import ua.com.point.Vertex3D;
 
+import java.util.List;
+
 public class Sphere extends SpaceShape{
-    private Vertex3D vertex3D;
     private double radius;
-    public Sphere(Vertex3D vertex3D, String name,double radius) {
-        super(vertex3D, name);
-        this.vertex3D = vertex3D;
-        this.radius=radius;
+
+    public Sphere(List<Vertex3D> vertex3DList, String name, double radius) {
+        super(vertex3DList, name);
+        this.radius = radius;
     }
 
     @Override
@@ -24,8 +25,8 @@ public class Sphere extends SpaceShape{
 
     @Override
     public String toString() {
-        return "Coordinates= " + vertex3D +
-                ", radius=" + radius
-                + super.toString();
+        return super.toString()+"{" +
+                "radius=" + radius +
+                "} " ;
     }
 }

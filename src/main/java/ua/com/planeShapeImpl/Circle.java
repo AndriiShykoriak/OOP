@@ -3,14 +3,14 @@ package ua.com.planeShapeImpl;
 import ua.com.figure.PlaneShape;
 import ua.com.point.Vertex2D;
 
+import java.util.List;
+
 
 public class Circle extends PlaneShape {
-    private Vertex2D vertex2D;
     private double radius;
 
-    public Circle(Vertex2D vertex2D, String name,double radius) {
-        super(vertex2D,name);
-        this.vertex2D = vertex2D;
+    public Circle(List<Vertex2D> vertex2DList, String name, double radius) {
+        super(vertex2DList, name);
         this.radius = radius;
     }
 
@@ -24,8 +24,8 @@ public class Circle extends PlaneShape {
 
     @Override
     public String toString() {
-        return "Coordinates= " + vertex2D +
-                ", radius= " + radius +
-                ' ' + super.toString();
+        return super.toString()+"{" +
+                "radius=" + radius +
+                "} ";
     }
 }

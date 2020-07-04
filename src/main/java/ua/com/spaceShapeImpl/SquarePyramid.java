@@ -3,14 +3,14 @@ package ua.com.spaceShapeImpl;
 import ua.com.figure.SpaceShape;
 import ua.com.point.Vertex3D;
 
+import java.util.List;
+
 public class SquarePyramid extends SpaceShape {
-    private Vertex3D vertex3D;
     private double width;
     private double height;
 
-    public SquarePyramid(Vertex3D vertex3D, String name, double width, double height) {
-        super(vertex3D, name);
-        this.vertex3D = vertex3D;
+    public SquarePyramid(List<Vertex3D> vertex3DList, String name, double width, double height) {
+        super(vertex3DList, name);
         this.width = width;
         this.height = height;
     }
@@ -29,9 +29,9 @@ public class SquarePyramid extends SpaceShape {
 
     @Override
     public String toString() {
-        return "Coordinates= " + vertex3D +
-                ", width=" + width +
-                ", height=" + height
-                + super.toString();
+        return super.toString()+"{" +
+                "width=" + width +
+                ", height=" + height +
+                "} ";
     }
 }

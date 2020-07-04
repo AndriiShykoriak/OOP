@@ -3,17 +3,18 @@ package ua.com.spaceShapeImpl;
 import ua.com.figure.SpaceShape;
 import ua.com.point.Vertex3D;
 
+import java.util.List;
+
 public class Cuboid extends SpaceShape {
-    private Vertex3D vertex3D;
     private double width;
     private double height;
     private double depth;
-    public Cuboid(Vertex3D vertex3D,String name, double width,double height, double depth) {
-        super(vertex3D, name);
-        this.vertex3D=vertex3D;
-        this.width=width;
-        this.height=height;
-        this.depth=depth;
+
+    public Cuboid(List<Vertex3D> vertex3DList, String name, double width, double height, double depth) {
+        super(vertex3DList, name);
+        this.width = width;
+        this.height = height;
+        this.depth = depth;
     }
 
     @Override
@@ -28,10 +29,10 @@ public class Cuboid extends SpaceShape {
 
     @Override
     public String toString() {
-        return "Coordinates= " + vertex3D +
-                ", width=" + width +
+        return super.toString()+"{" +
+                "width=" + width +
                 ", height=" + height +
-                ", depth=" + depth
-                + super.toString() ;
+                ", depth=" + depth +
+                "} " ;
     }
 }

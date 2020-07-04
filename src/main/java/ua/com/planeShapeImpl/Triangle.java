@@ -2,32 +2,25 @@ package ua.com.planeShapeImpl;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.w3c.dom.ls.LSOutput;
 import ua.com.figure.PlaneShape;
 import ua.com.point.Vertex2D;
+
+import java.util.List;
 
 @Setter
 @Getter
 public class Triangle extends PlaneShape{
-    private Vertex2D vertex2D;
-    private Vertex2D oneSide;
-    private Vertex2D secondSide;
-    private Vertex2D thirdSide;
-
-
     private double ab;
     private double bc;
     private double ca;
 
-    public Triangle(Vertex2D oneSide, Vertex2D secondSide, Vertex2D thirdSide,String name) {
-        super(oneSide, name);
-        this.oneSide = oneSide;
-        this.secondSide = secondSide;
-        this.thirdSide = thirdSide;
-        ab = oneSide.getDistance(oneSide, secondSide);
-        bc = secondSide.getDistance(secondSide, thirdSide);
-        ca = thirdSide.getDistance(thirdSide, oneSide);
+    public Triangle(Vertex2D a,Vertex2D b,Vertex2D c, String name) {
+        super(List.of(a,b,c), name);
+        this.ab = a.getDistance(b);
+        this.bc = b.getDistance(c);
+        this.ca = c.getDistance(a);
     }
-
 
     @Override
     public double getArea() {
@@ -43,13 +36,10 @@ public class Triangle extends PlaneShape{
 
     @Override
     public String toString() {
-        return "Coordinates= oneSide= " + oneSide +
-                ", secondSide= " + secondSide +
-                ", thirdSide= " + thirdSide +
-                ", ab=" + ab +
+        return super.toString() +" (Sides: {" +
+                "ab=" + ab +
                 ", bc=" + bc +
                 ", ca=" + ca +
-                "} " + super.toString();
-
+                "}) " ;
     }
 }

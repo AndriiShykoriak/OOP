@@ -1,19 +1,20 @@
 package ua.com.figure;
 
 import ua.com.basicInterfaces.VolumeAreaMeasurable;
+import ua.com.point.Vertex2D;
 import ua.com.point.Vertex3D;
 
-public abstract class SpaceShape extends Shape implements VolumeAreaMeasurable {
-    Vertex3D vertex3D;
+import java.util.List;
 
-    public SpaceShape(Vertex3D vertex3D, String name) {
-        super(name);
-        this.vertex3D = vertex3D;
+public abstract class SpaceShape extends Shape implements VolumeAreaMeasurable {
+
+
+    public SpaceShape(List<Vertex3D> vertex3DList, String name) {
+        super(vertex3DList, name);
     }
 
     @Override
     public String toString() {
-        String out = " Shape type: " + "\"" + getName() + "\"  " + "Volume: " + String.format("%.1f", getVolume()) + "\tArea: " + String.format("%.1f", getArea());
-        return out;
+       return  super.toString() + " Shape type: " + "\"" + getName() + "\"  " + "Volume: " + String.format("%.1f", getVolume()) + "\tArea: " + String.format("%.1f", getArea());
     }
 }
